@@ -1,0 +1,13 @@
+<%= form_tag '/patients' do %>
+
+	<%= label_tag :first_name %>
+	<%= text_field_tag :first_name, @patient.first_name %>
+
+	<%= label_tag :last_name %>
+	<%= text_field_tag :last_name, @patient.last_name %>
+
+	<%= label_tag :date_of_birth %>
+	<%= text_field_tag :date_of_birth, @patient.date_of_birth %>
+
+	<%= submit_tag "submit" %>
+<% end %>

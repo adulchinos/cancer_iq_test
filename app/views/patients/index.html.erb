@@ -1,0 +1,17 @@
+<div>
+	<table class="table">
+		<% @patients.each do |patient| %>
+			<tr>
+				<td><%= patient.first_name %></td>
+				<td><%= patient.last_name %></td>
+				<td><%= patient.date_of_birth %></td>
+				<% patient.cancers.each do |cancer| %>
+					<td><%= cancer.cancer_type %></td>
+				<% end %>
+				<td><a href="/patients/<%= patient.id %>/edit">edit</a></td>
+				<td><a href="/patients/<%= patient.id %>">patient information</a></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+

@@ -1,0 +1,23 @@
+<div ng-controller="cancersCtrl" ng-init="fetchData()">
+	<h1><%= @patient.last_name %>, <%= @patient.first_name %></h1>
+	<h2>Date of birth: <%= @patient.date_of_birth %></h2>
+
+	<ul>
+		<li ng-repeat="cancer in cancers">{{ cancer.cancer_type }}</li>
+	</ul>
+
+	<div>
+		<h2>Add a new diagnosis:</h2>
+		<div class="input-group">
+		  	<input ng-model="newCancerType" type="text" class="form-control" placeholder="Type of cancer" aria-describedby="basic-addon2">
+		  	<span class="input-group-addon" id="basic-addon2">Cancer Type</span>
+		</div>
+		<div class="input-group">
+		  	<input ng-model="newAgeOfDiagnosis" type="text" class="form-control" placeholder="Age at diagnosis" aria-describedby="basic-addon2">
+		  	<span class="input-group-addon" id="basic-addon2">Age</span>
+		</div>
+		<div><input ng-model="newPatientId" text="<%= @patient.id %>"></div>
+		<button class="btn btn-default" ng-click="addNewCancer(newCancerType, newAgeOfDiagnosis)">Add</button>
+	</div>
+</div>	
+
